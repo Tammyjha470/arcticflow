@@ -35,3 +35,25 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Terraform state — never commit these
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform credentials & overrides
+*.tfvars
+!example.tfvars
+override.tf
+override.tf.json
+
+# Local .terraform directory (dependencies)
+**/.terraform/*
+
+# Crash logs
+crash.log
+
+# Sensitive files
+*.pem
+*.key
+secrets/
