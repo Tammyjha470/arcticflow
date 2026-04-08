@@ -58,3 +58,17 @@ module "key_vault" {
   allowed_ip_address  = var.allowed_ip_address
   depends_on = [module.networking]
 }
+module "storage" {
+  source = "./modules/storage"
+
+  project             = var.project
+  environment         = var.environment
+  location            = var.location
+  resource_group_name = module.networking.resource_group_name
+  subnet_id           = module.networking.subnet_data_id
+  key_vault_id        = module.key_vault.key_vault_id
+  allowed_ip_address  = var.allowed_ip_address
+  tags                = var.tags
+
+  depends_on = [module.key_vault]
+}
