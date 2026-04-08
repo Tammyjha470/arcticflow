@@ -28,8 +28,33 @@ provider "azurerm" {
 }
 
 provider "snowflake" {
-  account                  = var.snowflake_account
-  username                 = var.snowflake_user
-  private_key_path         = var.snowflake_private_key_path
-  private_key_passphrase   = var.snowflake_private_key_passphrase
+  account                = var.snowflake_account
+  username               = var.snowflake_user
+  private_key_path       = var.snowflake_private_key_path
+  private_key_passphrase = var.snowflake_private_key_passphrase
+}
+
+module "networking" {
+  source = "./modules/networking"
+
+  project             = var.project
+  environment         = var.environment
+  location            = var.location
+  resource_group_name = "rg-${var.project}-${var.environment}"
+  tags                = var.tags
+}
+
+module "key_vault" {
+  source = "./modules/key_vault"
+
+  project             = var.project
+  environment         = var.environment
+  location            = var.location
+  resource_group_name = module.networking.resource_group_name
+  tenant_id           = var.tenant_id
+  admin_object_id     = var.admin_object_id
+  subnet_id           = module.networking.subnet_data_id
+  tags                = var.tags
+  allowed_ip_address  = var.allowed_ip_address
+  depends_on = [module.networking]
 }
