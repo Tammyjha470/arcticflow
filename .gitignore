@@ -60,3 +60,6 @@ secrets/
 # Snowflake RSA key pair
 snowflake_private_key.p8
 snowflake_public_key.pub
+
+# Local credential backups - never commit
+dnt.txt
