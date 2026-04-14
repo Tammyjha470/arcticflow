@@ -1,113 +1,154 @@
-<svg viewBox="0 0 1400 850" width="1400" height="850" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+<svg viewBox="0 0 1100 740" width="1100" height="740" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
 
   <!-- Background -->
-  <rect width="1400" height="850" fill="#0f1117"/>
-
-  <!-- Title -->
-  <text x="700" y="52" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="bold">ArcticFlow - Enterprise Data Engineering Platform</text>
+  <rect width="1100" height="740" fill="#0f1117"/>
 
   <!-- Arrow markers -->
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
-      <path d="M0,0 L0,8 L10,4 z" fill="#888888"/>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L10,4 z" fill="#888"/>
+    </marker>
+    <marker id="arr-red" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L10,4 z" fill="#e74c3c"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L10,4 z" fill="#2ecc71"/>
     </marker>
   </defs>
 
-  <!-- ── SOURCE ── -->
-  <rect x="40" y="90" width="210" height="110" rx="12" fill="#1e2a3a" stroke="#4a90d9" stroke-width="2"/>
-  <text x="145" y="120" text-anchor="middle" fill="#4a90d9" font-size="14" font-weight="bold">SOURCE</text>
-  <text x="145" y="143" text-anchor="middle" fill="#ffffff" font-size="13">Azure SQL</text>
-  <text x="145" y="163" text-anchor="middle" fill="#aaaaaa" font-size="11">Staging Database</text>
-  <text x="145" y="183" text-anchor="middle" fill="#aaaaaa" font-size="11">Standard S0 Tier</text>
+  <!-- Title -->
+  <text x="550" y="36" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="bold">ArcticFlow - Enterprise Data Engineering Platform</text>
 
-  <!-- Arrow Source to ADF -->
-  <line x1="250" y1="145" x2="330" y2="145" stroke="#4a90d9" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- ── SUBGROUP BORDERS ── -->
 
-  <!-- ── ORCHESTRATION ── -->
-  <rect x="330" y="90" width="210" height="110" rx="12" fill="#1e2a3a" stroke="#f5a623" stroke-width="2"/>
-  <text x="435" y="120" text-anchor="middle" fill="#f5a623" font-size="14" font-weight="bold">ORCHESTRATION</text>
-  <text x="435" y="143" text-anchor="middle" fill="#ffffff" font-size="13">Azure Data Factory</text>
-  <text x="435" y="163" text-anchor="middle" fill="#aaaaaa" font-size="11">Pipelines and Triggers</text>
-  <text x="435" y="183" text-anchor="middle" fill="#aaaaaa" font-size="11">Managed Identity</text>
+  <rect x="25" y="230" width="215" height="205" rx="10" fill="none" stroke="#4a90d9" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="132" y="250" text-anchor="middle" fill="#4a90d9" font-size="11" opacity="0.8">Source</text>
 
-  <!-- Arrow ADF to Bronze -->
-  <line x1="540" y1="145" x2="620" y2="235" stroke="#cd7f32" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="265" y="230" width="220" height="205" rx="10" fill="none" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="375" y="250" text-anchor="middle" fill="#f5a623" font-size="11" opacity="0.8">Orchestration</text>
 
-  <!-- ── BRONZE ── -->
-  <rect x="620" y="235" width="220" height="100" rx="12" fill="#1e2a3a" stroke="#cd7f32" stroke-width="2"/>
-  <text x="730" y="265" text-anchor="middle" fill="#cd7f32" font-size="14" font-weight="bold">BRONZE LAYER</text>
-  <text x="730" y="288" text-anchor="middle" fill="#ffffff" font-size="13">ADLS Gen2</text>
-  <text x="730" y="308" text-anchor="middle" fill="#aaaaaa" font-size="11">Raw ingested data</text>
+  <rect x="525" y="55" width="225" height="530" rx="10" fill="none" stroke="#888888" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.35"/>
+  <text x="637" y="75" text-anchor="middle" fill="#aaaaaa" font-size="11" opacity="0.8">ADLS Gen2 - Medallion Layers</text>
 
-  <!-- Arrow Bronze to Silver -->
-  <line x1="730" y1="335" x2="730" y2="380" stroke="#c0c0c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="795" y="230" width="270" height="205" rx="10" fill="none" stroke="#29b5e8" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="930" y="250" text-anchor="middle" fill="#29b5e8" font-size="11" opacity="0.8">Analytics</text>
 
-  <!-- ── SILVER ── -->
-  <rect x="620" y="380" width="220" height="100" rx="12" fill="#1e2a3a" stroke="#c0c0c0" stroke-width="2"/>
-  <text x="730" y="410" text-anchor="middle" fill="#c0c0c0" font-size="14" font-weight="bold">SILVER LAYER</text>
-  <text x="730" y="433" text-anchor="middle" fill="#ffffff" font-size="13">ADLS Gen2</text>
-  <text x="730" y="453" text-anchor="middle" fill="#aaaaaa" font-size="11">Cleaned and typed</text>
+  <rect x="265" y="470" width="220" height="195" rx="10" fill="none" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="375" y="490" text-anchor="middle" fill="#e74c3c" font-size="11" opacity="0.8">Security</text>
 
-  <!-- Arrow Silver to Gold -->
-  <line x1="730" y1="480" x2="730" y2="525" stroke="#ffd700" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="795" y="470" width="270" height="195" rx="10" fill="none" stroke="#2ecc71" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="930" y="490" text-anchor="middle" fill="#2ecc71" font-size="11" opacity="0.8">Observability</text>
 
-  <!-- ── GOLD ── -->
-  <rect x="620" y="525" width="220" height="100" rx="12" fill="#1e2a3a" stroke="#ffd700" stroke-width="2"/>
-  <text x="730" y="555" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">GOLD LAYER</text>
-  <text x="730" y="578" text-anchor="middle" fill="#ffffff" font-size="13">ADLS Gen2</text>
-  <text x="730" y="598" text-anchor="middle" fill="#aaaaaa" font-size="11">Business-ready aggregates</text>
+  <!-- ── MAIN BOXES ── -->
 
-  <!-- Arrow Gold to Snowflake -->
-  <line x1="840" y1="575" x2="930" y2="500" stroke="#29b5e8" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Azure SQL -->
+  <rect x="40" y="260" width="185" height="145" rx="10" fill="#1e2a3a" stroke="#4a90d9" stroke-width="2"/>
+  <text x="132" y="290" text-anchor="middle" fill="#4a90d9" font-size="13" font-weight="bold">Azure SQL</text>
+  <text x="132" y="311" text-anchor="middle" fill="#ffffff" font-size="12">Staging Database</text>
+  <text x="132" y="331" text-anchor="middle" fill="#aaaaaa" font-size="11">Standard S0 Tier</text>
+  <text x="132" y="350" text-anchor="middle" fill="#aaaaaa" font-size="11">Firewall + VNet Rule</text>
+  <text x="132" y="369" text-anchor="middle" fill="#aaaaaa" font-size="11">Creds stored in Key Vault</text>
+  <text x="132" y="388" text-anchor="middle" fill="#aaaaaa" font-size="11">Private subnet access only</text>
 
-  <!-- ── SNOWFLAKE ── -->
-  <rect x="930" y="350" width="220" height="290" rx="12" fill="#1e2a3a" stroke="#29b5e8" stroke-width="2"/>
-  <text x="1040" y="385" text-anchor="middle" fill="#29b5e8" font-size="14" font-weight="bold">SNOWFLAKE</text>
-  <line x1="950" y1="398" x2="1130" y2="398" stroke="#29b5e8" stroke-width="0.8" opacity="0.4"/>
-  <text x="1040" y="420" text-anchor="middle" fill="#ffffff" font-size="13">RAW_DB</text>
-  <text x="1040" y="443" text-anchor="middle" fill="#ffffff" font-size="13">ANALYTICS_DB</text>
-  <text x="1040" y="466" text-anchor="middle" fill="#ffffff" font-size="13">REPORTING_DB</text>
-  <line x1="950" y1="480" x2="1130" y2="480" stroke="#29b5e8" stroke-width="0.8" opacity="0.4"/>
-  <text x="1040" y="503" text-anchor="middle" fill="#aaaaaa" font-size="12">LOADER role</text>
-  <text x="1040" y="524" text-anchor="middle" fill="#aaaaaa" font-size="12">TRANSFORMER role</text>
-  <text x="1040" y="545" text-anchor="middle" fill="#aaaaaa" font-size="12">ANALYST role</text>
-  <line x1="950" y1="558" x2="1130" y2="558" stroke="#29b5e8" stroke-width="0.8" opacity="0.4"/>
-  <text x="1040" y="580" text-anchor="middle" fill="#aaaaaa" font-size="12">ARCTICFLOW_WH</text>
-  <text x="1040" y="600" text-anchor="middle" fill="#aaaaaa" font-size="11">RSA Key Auth</text>
-  <text x="1040" y="620" text-anchor="middle" fill="#aaaaaa" font-size="11">External Stage on Gold</text>
+  <!-- Azure Data Factory -->
+  <rect x="280" y="260" width="190" height="145" rx="10" fill="#1e2a3a" stroke="#f5a623" stroke-width="2"/>
+  <text x="375" y="290" text-anchor="middle" fill="#f5a623" font-size="13" font-weight="bold">Azure Data Factory</text>
+  <text x="375" y="311" text-anchor="middle" fill="#ffffff" font-size="12">3 Pipelines</text>
+  <text x="375" y="331" text-anchor="middle" fill="#aaaaaa" font-size="11">System-Assigned MSI</text>
+  <text x="375" y="350" text-anchor="middle" fill="#aaaaaa" font-size="11">Linked: KV, ADLS, SQL</text>
+  <text x="375" y="369" text-anchor="middle" fill="#aaaaaa" font-size="11">Storage Blob Contributor</text>
+  <text x="375" y="388" text-anchor="middle" fill="#aaaaaa" font-size="11">KV Secrets User</text>
 
-  <!-- ── SECURITY ── -->
-  <rect x="40" y="240" width="210" height="150" rx="12" fill="#1e2a3a" stroke="#e74c3c" stroke-width="2"/>
-  <text x="145" y="270" text-anchor="middle" fill="#e74c3c" font-size="14" font-weight="bold">SECURITY</text>
-  <text x="145" y="293" text-anchor="middle" fill="#ffffff" font-size="13">Azure Key Vault</text>
-  <text x="145" y="315" text-anchor="middle" fill="#aaaaaa" font-size="11">Secrets and Keys</text>
-  <text x="145" y="335" text-anchor="middle" fill="#aaaaaa" font-size="11">Managed Identities</text>
-  <text x="145" y="355" text-anchor="middle" fill="#aaaaaa" font-size="11">RBAC Assignments</text>
-  <text x="145" y="375" text-anchor="middle" fill="#aaaaaa" font-size="11">Network ACL</text>
+  <!-- Bronze -->
+  <rect x="540" y="95" width="195" height="115" rx="10" fill="#1e2a3a" stroke="#cd7f32" stroke-width="2"/>
+  <text x="637" y="124" text-anchor="middle" fill="#cd7f32" font-size="13" font-weight="bold">Bronze Layer</text>
+  <text x="637" y="146" text-anchor="middle" fill="#ffffff" font-size="12">Raw Ingested Data</text>
+  <text x="637" y="166" text-anchor="middle" fill="#aaaaaa" font-size="11">ADLS Gen2 Container</text>
+  <text x="637" y="185" text-anchor="middle" fill="#aaaaaa" font-size="11">No transformation applied</text>
 
-  <!-- ── NETWORKING ── -->
-  <rect x="40" y="430" width="210" height="120" rx="12" fill="#1e2a3a" stroke="#9b59b6" stroke-width="2"/>
-  <text x="145" y="460" text-anchor="middle" fill="#9b59b6" font-size="14" font-weight="bold">NETWORKING</text>
-  <text x="145" y="483" text-anchor="middle" fill="#ffffff" font-size="13">VNet and Subnets</text>
-  <text x="145" y="503" text-anchor="middle" fill="#aaaaaa" font-size="11">Private Endpoints</text>
-  <text x="145" y="523" text-anchor="middle" fill="#aaaaaa" font-size="11">NSG Rules</text>
-  <text x="145" y="543" text-anchor="middle" fill="#aaaaaa" font-size="11">Service Endpoints</text>
+  <!-- Silver -->
+  <rect x="540" y="270" width="195" height="115" rx="10" fill="#1e2a3a" stroke="#c0c0c0" stroke-width="2"/>
+  <text x="637" y="299" text-anchor="middle" fill="#c0c0c0" font-size="13" font-weight="bold">Silver Layer</text>
+  <text x="637" y="321" text-anchor="middle" fill="#ffffff" font-size="12">Cleaned and Typed</text>
+  <text x="637" y="341" text-anchor="middle" fill="#aaaaaa" font-size="11">ADLS Gen2 Container</text>
+  <text x="637" y="360" text-anchor="middle" fill="#aaaaaa" font-size="11">Schema enforced</text>
 
-  <!-- ── MONITORING ── -->
-  <rect x="40" y="590" width="210" height="120" rx="12" fill="#1e2a3a" stroke="#2ecc71" stroke-width="2"/>
-  <text x="145" y="620" text-anchor="middle" fill="#2ecc71" font-size="14" font-weight="bold">MONITORING</text>
-  <text x="145" y="643" text-anchor="middle" fill="#ffffff" font-size="13">Log Analytics Workspace</text>
-  <text x="145" y="663" text-anchor="middle" fill="#aaaaaa" font-size="11">Diagnostic Settings</text>
-  <text x="145" y="683" text-anchor="middle" fill="#aaaaaa" font-size="11">Metric Alerts</text>
-  <text x="145" y="703" text-anchor="middle" fill="#aaaaaa" font-size="11">30-day Retention</text>
+  <!-- Gold -->
+  <rect x="540" y="445" width="195" height="115" rx="10" fill="#1e2a3a" stroke="#ffd700" stroke-width="2"/>
+  <text x="637" y="474" text-anchor="middle" fill="#ffd700" font-size="13" font-weight="bold">Gold Layer</text>
+  <text x="637" y="496" text-anchor="middle" fill="#ffffff" font-size="12">Business-Ready Aggregates</text>
+  <text x="637" y="516" text-anchor="middle" fill="#aaaaaa" font-size="11">ADLS Gen2 Container</text>
+  <text x="637" y="535" text-anchor="middle" fill="#aaaaaa" font-size="11">Analytics-optimised</text>
 
-  <!-- ── IaC Label ── -->
-  <rect x="930" y="90" width="420" height="90" rx="12" fill="#1e2a3a" stroke="#7b42bc" stroke-width="2"/>
-  <text x="1140" y="125" text-anchor="middle" fill="#7b42bc" font-size="14" font-weight="bold">INFRASTRUCTURE AS CODE</text>
-  <text x="1140" y="150" text-anchor="middle" fill="#ffffff" font-size="13">100% Terraform - zero manual clicks</text>
-  <text x="1140" y="168" text-anchor="middle" fill="#aaaaaa" font-size="11">Azure + Snowflake providers</text>
+  <!-- Snowflake -->
+  <rect x="810" y="260" width="240" height="145" rx="10" fill="#1e2a3a" stroke="#29b5e8" stroke-width="2"/>
+  <text x="930" y="289" text-anchor="middle" fill="#29b5e8" font-size="13" font-weight="bold">Snowflake</text>
+  <text x="930" y="310" text-anchor="middle" fill="#ffffff" font-size="11">RAW_DB / ANALYTICS_DB / REPORTING_DB</text>
+  <text x="930" y="330" text-anchor="middle" fill="#aaaaaa" font-size="11">LOADER / TRANSFORMER / ANALYST roles</text>
+  <text x="930" y="349" text-anchor="middle" fill="#aaaaaa" font-size="11">ARCTICFLOW_WH warehouse</text>
+  <text x="930" y="368" text-anchor="middle" fill="#aaaaaa" font-size="11">RSA key auth - no passwords</text>
+  <text x="930" y="387" text-anchor="middle" fill="#aaaaaa" font-size="11">External Stage on Gold layer</text>
+
+  <!-- Azure Key Vault -->
+  <rect x="280" y="500" width="190" height="140" rx="10" fill="#1e2a3a" stroke="#e74c3c" stroke-width="2"/>
+  <text x="375" y="528" text-anchor="middle" fill="#e74c3c" font-size="13" font-weight="bold">Azure Key Vault</text>
+  <text x="375" y="549" text-anchor="middle" fill="#ffffff" font-size="12">Secrets and Keys</text>
+  <text x="375" y="569" text-anchor="middle" fill="#aaaaaa" font-size="11">RBAC Authorization</text>
+  <text x="375" y="588" text-anchor="middle" fill="#aaaaaa" font-size="11">Network ACL - deny public</text>
+  <text x="375" y="607" text-anchor="middle" fill="#aaaaaa" font-size="11">Runtime injection only</text>
+  <text x="375" y="626" text-anchor="middle" fill="#aaaaaa" font-size="11">Zero hardcoded secrets</text>
+
+  <!-- Log Analytics -->
+  <rect x="810" y="500" width="240" height="140" rx="10" fill="#1e2a3a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="930" y="528" text-anchor="middle" fill="#2ecc71" font-size="13" font-weight="bold">Log Analytics</text>
+  <text x="930" y="549" text-anchor="middle" fill="#ffffff" font-size="12">Monitoring Workspace</text>
+  <text x="930" y="569" text-anchor="middle" fill="#aaaaaa" font-size="11">30-day log retention</text>
+  <text x="930" y="588" text-anchor="middle" fill="#aaaaaa" font-size="11">ADF pipeline alerts</text>
+  <text x="930" y="607" text-anchor="middle" fill="#aaaaaa" font-size="11">Storage utilization alerts</text>
+  <text x="930" y="626" text-anchor="middle" fill="#aaaaaa" font-size="11">Diagnostic settings on all svcs</text>
+
+  <!-- ── MAIN FLOW ARROWS ── -->
+
+  <!-- SQL -> ADF -->
+  <line x1="225" y1="332" x2="280" y2="332" stroke="#4a90d9" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="252" y="323" text-anchor="middle" fill="#555555" font-size="10">ingest</text>
+
+  <!-- ADF -> Bronze (diagonal up-right) -->
+  <path d="M 470 285 L 540 152" stroke="#cd7f32" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <text x="495" y="205" text-anchor="middle" fill="#555555" font-size="10" transform="rotate(-29,495,205)">raw load</text>
+
+  <!-- Bronze -> Silver -->
+  <line x1="637" y1="210" x2="637" y2="270" stroke="#c0c0c0" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="656" y="244" fill="#555555" font-size="10">transform</text>
+
+  <!-- Silver -> Gold -->
+  <line x1="637" y1="385" x2="637" y2="445" stroke="#ffd700" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="656" y="419" fill="#555555" font-size="10">aggregate</text>
+
+  <!-- Gold -> Snowflake (diagonal up-right) -->
+  <path d="M 735 502 L 810 337" stroke="#29b5e8" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <text x="782" y="410" text-anchor="middle" fill="#555555" font-size="10" transform="rotate(-63,782,410)">ext stage</text>
+
+  <!-- ── DOTTED SUPPORT ARROWS ── -->
+
+  <!-- KV -> ADF (vertical up) -->
+  <line x1="375" y1="500" x2="375" y2="405" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-red)" opacity="0.75"/>
+  <text x="388" y="455" fill="#e74c3c" font-size="10" opacity="0.75">runtime</text>
+  <text x="388" y="467" fill="#e74c3c" font-size="10" opacity="0.75">secrets</text>
+
+  <!-- KV -> SQL (L-shape: left then up) -->
+  <path d="M 280,570 L 132,570 L 132,405" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arr-red)" opacity="0.75"/>
+  <text x="70" y="490" text-anchor="middle" fill="#e74c3c" font-size="10" opacity="0.75">credentials</text>
+
+  <!-- MON -> Snowflake (vertical up) -->
+  <line x1="930" y1="500" x2="930" y2="405" stroke="#2ecc71" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-green)" opacity="0.75"/>
+  <text x="943" y="455" fill="#2ecc71" font-size="10" opacity="0.75">monitors</text>
+
+  <!-- MON -> ADF (L-shape: left along bottom then up, arriving at right edge of ADF) -->
+  <path d="M 810,570 L 470,570 L 470,405" stroke="#2ecc71" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arr-green)" opacity="0.75"/>
+  <text x="637" y="560" text-anchor="middle" fill="#2ecc71" font-size="10" opacity="0.75">monitors</text>
 
   <!-- Footer -->
-  <text x="700" y="830" text-anchor="middle" fill="#555555" font-size="11">Azure Pay-As-You-Go + Snowflake - Terraform Automated</text>
+  <text x="550" y="720" text-anchor="middle" fill="#444444" font-size="11">Azure + Snowflake - 100% Terraform Automated - ArcticFlow</text>
 
 </svg>
