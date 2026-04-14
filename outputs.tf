@@ -41,3 +41,13 @@ output "sql_database_name" {
   description = "Staging database name"
   value       = module.sql.sql_database_name
 }
+
+output "data_factory_name" {
+  description = "Data Factory name"
+  value       = module.data_factory.data_factory_name
+}
+
+output "data_factory_principal_id" {
+  description = "ADF Managed Identity principal ID"
+  value       = module.data_factory.data_factory_principal_id
+}

@@ -89,3 +89,21 @@ module "sql" {
 
   depends_on = [module.key_vault]
 }
+
+module "data_factory" {
+  source = "./modules/data_factory"
+
+  project              = var.project
+  environment          = var.environment
+  location             = var.location
+  resource_group_name  = module.networking.resource_group_name
+  key_vault_id         = module.key_vault.key_vault_id
+  key_vault_uri        = module.key_vault.key_vault_uri
+  storage_account_name = module.storage.storage_account_name
+  sql_server_fqdn      = module.sql.sql_server_fqdn
+  sql_database_name    = module.sql.sql_database_name
+  sql_admin_username   = var.sql_admin_username
+  tags                 = var.tags
+
+  depends_on = [module.key_vault, module.storage, module.sql]
+}
