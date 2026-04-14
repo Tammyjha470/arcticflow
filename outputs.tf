@@ -26,3 +26,18 @@ output "storage_primary_endpoint" {
   description = "ADLS Gen2 primary endpoint"
   value       = module.storage.storage_account_primary_endpoint
 }
+
+output "sql_server_name" {
+  description = "SQL Server name"
+  value       = module.sql.sql_server_name
+}
+
+output "sql_server_fqdn" {
+  description = "SQL Server fully qualified domain name"
+  value       = module.sql.sql_server_fqdn
+}
+
+output "sql_database_name" {
+  description = "Staging database name"
+  value       = module.sql.sql_database_name
+}

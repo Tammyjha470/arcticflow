@@ -72,3 +72,20 @@ module "storage" {
 
   depends_on = [module.key_vault]
 }
+
+module "sql" {
+  source = "./modules/sql"
+
+  project             = var.project
+  environment         = var.environment
+  location            = var.location
+  resource_group_name = module.networking.resource_group_name
+  subnet_id           = module.networking.subnet_data_id
+  key_vault_id        = module.key_vault.key_vault_id
+  sql_admin_username  = var.sql_admin_username
+  sql_admin_password  = var.sql_admin_password
+  allowed_ip_address  = var.allowed_ip_address
+  tags                = var.tags
+
+  depends_on = [module.key_vault]
+}
