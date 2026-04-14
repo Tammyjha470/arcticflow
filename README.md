@@ -24,7 +24,43 @@ The platform is built around three core principles:
 
 ## Architecture
 
-![ArcticFlow Architecture](docs/architecture.svg)
+```mermaid
+flowchart LR
+    subgraph SRC [Source]
+        SQL[(Azure SQL\nStaging DB)]
+    end
+
+    subgraph ORCH [Orchestration]
+        ADF[Azure Data Factory\nManaged Identity]
+    end
+
+    subgraph MED [ADLS Gen2 - Medallion Layers]
+        B[Bronze\nRaw Ingested Data]
+        SL[Silver\nCleaned and Typed]
+        G[Gold\nBusiness-Ready Aggregates]
+        B --> SL --> G
+    end
+
+    subgraph SNOW [Analytics]
+        SF[(Snowflake\nRAW_DB / ANALYTICS_DB / REPORTING_DB)]
+    end
+
+    subgraph SEC [Security]
+        KV{{Azure Key Vault\nSecrets and RBAC}}
+    end
+
+    subgraph OBS [Observability]
+        MON{{Log Analytics\nAlerts and Diagnostics}}
+    end
+
+    SQL -->|ingest| ADF
+    ADF -->|raw load| B
+    G -->|external stage| SF
+    KV -.->|runtime secrets| ADF
+    KV -.->|credentials| SQL
+    MON -.->|monitors| ADF
+    MON -.->|monitors| SF
+```
 
 ---
 
