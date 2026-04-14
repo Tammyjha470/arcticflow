@@ -1,0 +1,99 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="bold">ArcticFlow — Enterprise Data Engineering Platform</text>
+
+  <!-- ZONE: Source -->
+  <rect x="30" y="70" width="140" height="80" rx="10" fill="#1e2a3a" stroke="#4a90d9" stroke-width="1.5"/>
+  <text x="100" y="100" text-anchor="middle" fill="#4a90d9" font-size="11" font-weight="bold">SOURCE</text>
+  <text x="100" y="118" text-anchor="middle" fill="#ffffff" font-size="10">Azure SQL</text>
+  <text x="100" y="133" text-anchor="middle" fill="#aaaaaa" font-size="9">Staging DB</text>
+
+  <!-- Arrow Source to ADF -->
+  <line x1="170" y1="110" x2="220" y2="110" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ZONE: Orchestration -->
+  <rect x="220" y="70" width="140" height="80" rx="10" fill="#1e2a3a" stroke="#f5a623" stroke-width="1.5"/>
+  <text x="290" y="100" text-anchor="middle" fill="#f5a623" font-size="11" font-weight="bold">ORCHESTRATION</text>
+  <text x="290" y="118" text-anchor="middle" fill="#ffffff" font-size="10">Azure Data Factory</text>
+  <text x="290" y="133" text-anchor="middle" fill="#aaaaaa" font-size="9">Pipelines and Triggers</text>
+
+  <!-- Arrow ADF to Bronze -->
+  <line x1="360" y1="110" x2="410" y2="170" stroke="#cd7f32" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ZONE: Medallion Storage -->
+  <rect x="390" y="155" width="160" height="70" rx="10" fill="#1e2a3a" stroke="#cd7f32" stroke-width="1.5"/>
+  <text x="470" y="178" text-anchor="middle" fill="#cd7f32" font-size="11" font-weight="bold">BRONZE LAYER</text>
+  <text x="470" y="196" text-anchor="middle" fill="#ffffff" font-size="10">ADLS Gen2</text>
+  <text x="470" y="211" text-anchor="middle" fill="#aaaaaa" font-size="9">Raw ingested data</text>
+
+  <!-- Arrow Bronze to Silver -->
+  <line x1="470" y1="225" x2="470" y2="265" stroke="#c0c0c0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="390" y="265" width="160" height="70" rx="10" fill="#1e2a3a" stroke="#c0c0c0" stroke-width="1.5"/>
+  <text x="470" y="288" text-anchor="middle" fill="#c0c0c0" font-size="11" font-weight="bold">SILVER LAYER</text>
+  <text x="470" y="306" text-anchor="middle" fill="#ffffff" font-size="10">ADLS Gen2</text>
+  <text x="470" y="321" text-anchor="middle" fill="#aaaaaa" font-size="9">Cleaned and typed</text>
+
+  <!-- Arrow Silver to Gold -->
+  <line x1="470" y1="335" x2="470" y2="375" stroke="#ffd700" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="390" y="375" width="160" height="70" rx="10" fill="#1e2a3a" stroke="#ffd700" stroke-width="1.5"/>
+  <text x="470" y="398" text-anchor="middle" fill="#ffd700" font-size="11" font-weight="bold">GOLD LAYER</text>
+  <text x="470" y="416" text-anchor="middle" fill="#ffffff" font-size="10">ADLS Gen2</text>
+  <text x="470" y="431" text-anchor="middle" fill="#aaaaaa" font-size="9">Business ready</text>
+
+  <!-- Arrow Gold to Snowflake -->
+  <line x1="550" y1="410" x2="620" y2="350" stroke="#29b5e8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ZONE: Snowflake -->
+  <rect x="620" y="270" width="150" height="160" rx="10" fill="#1e2a3a" stroke="#29b5e8" stroke-width="1.5"/>
+  <text x="695" y="295" text-anchor="middle" fill="#29b5e8" font-size="11" font-weight="bold">SNOWFLAKE</text>
+  <text x="695" y="313" text-anchor="middle" fill="#ffffff" font-size="10">RAW_DB</text>
+  <text x="695" y="330" text-anchor="middle" fill="#ffffff" font-size="10">ANALYTICS_DB</text>
+  <text x="695" y="347" text-anchor="middle" fill="#ffffff" font-size="10">REPORTING_DB</text>
+  <text x="695" y="370" text-anchor="middle" fill="#aaaaaa" font-size="9">LOADER role</text>
+  <text x="695" y="385" text-anchor="middle" fill="#aaaaaa" font-size="9">TRANSFORMER role</text>
+  <text x="695" y="400" text-anchor="middle" fill="#aaaaaa" font-size="9">ANALYST role</text>
+  <text x="695" y="420" text-anchor="middle" fill="#aaaaaa" font-size="9">ARCTICFLOW_WH</text>
+
+  <!-- ZONE: Security -->
+  <rect x="30" y="200" width="140" height="100" rx="10" fill="#1e2a3a" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="100" y="225" text-anchor="middle" fill="#e74c3c" font-size="11" font-weight="bold">SECURITY</text>
+  <text x="100" y="243" text-anchor="middle" fill="#ffffff" font-size="10">Azure Key Vault</text>
+  <text x="100" y="260" text-anchor="middle" fill="#aaaaaa" font-size="9">Secrets and Keys</text>
+  <text x="100" y="275" text-anchor="middle" fill="#aaaaaa" font-size="9">Managed Identities</text>
+  <text x="100" y="290" text-anchor="middle" fill="#aaaaaa" font-size="9">RBAC</text>
+
+  <!-- ZONE: Networking -->
+  <rect x="30" y="330" width="140" height="80" rx="10" fill="#1e2a3a" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="100" y="355" text-anchor="middle" fill="#9b59b6" font-size="11" font-weight="bold">NETWORKING</text>
+  <text x="100" y="373" text-anchor="middle" fill="#ffffff" font-size="10">VNet and Subnets</text>
+  <text x="100" y="390" text-anchor="middle" fill="#aaaaaa" font-size="9">Private Endpoints</text>
+  <text x="100" y="405" text-anchor="middle" fill="#aaaaaa" font-size="9">NSG Rules</text>
+
+  <!-- ZONE: Monitoring -->
+  <rect x="30" y="440" width="140" height="80" rx="10" fill="#1e2a3a" stroke="#2ecc71" stroke-width="1.5"/>
+  <text x="100" y="465" text-anchor="middle" fill="#2ecc71" font-size="11" font-weight="bold">MONITORING</text>
+  <text x="100" y="483" text-anchor="middle" fill="#ffffff" font-size="10">Log Analytics</text>
+  <text x="100" y="500" text-anchor="middle" fill="#aaaaaa" font-size="9">Alerts and Diagnostics</text>
+
+  <!-- IaC Label -->
+  <rect x="620" y="70" width="250" height="60" rx="10" fill="#1e2a3a" stroke="#7b42bc" stroke-width="1.5"/>
+  <text x="745" y="95" text-anchor="middle" fill="#7b42bc" font-size="11" font-weight="bold">INFRASTRUCTURE AS CODE</text>
+  <text x="745" y="113" text-anchor="middle" fill="#ffffff" font-size="10">100% Terraform — zero manual clicks</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#888888"/>
+    </marker>
+  </defs>
+
+  <!-- Footer -->
+  <text x="450" y="580" text-anchor="middle" fill="#555555" font-size="10">Azure Pay-As-You-Go + Snowflake Business Critical — Terraform Automated</text>
+
+</svg>
