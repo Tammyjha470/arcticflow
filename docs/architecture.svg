@@ -4,7 +4,7 @@
   <rect width="900" height="600" fill="#0f1117"/>
 
   <!-- Title -->
-  <text x="450" y="40" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="bold">ArcticFlow — Enterprise Data Engineering Platform</text>
+  <text x="450" y="40" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="bold">ArcticFlow - Enterprise Data Engineering Platform</text>
 
   <!-- ZONE: Source -->
   <rect x="30" y="70" width="140" height="80" rx="10" fill="#1e2a3a" stroke="#4a90d9" stroke-width="1.5"/>
@@ -84,7 +84,7 @@
   <!-- IaC Label -->
   <rect x="620" y="70" width="250" height="60" rx="10" fill="#1e2a3a" stroke="#7b42bc" stroke-width="1.5"/>
   <text x="745" y="95" text-anchor="middle" fill="#7b42bc" font-size="11" font-weight="bold">INFRASTRUCTURE AS CODE</text>
-  <text x="745" y="113" text-anchor="middle" fill="#ffffff" font-size="10">100% Terraform — zero manual clicks</text>
+  <text x="745" y="113" text-anchor="middle" fill="#ffffff" font-size="10">100% Terraform - zero manual clicks</text>
 
   <!-- Arrow markers -->
   <defs>
@@ -94,6 +94,6 @@
   </defs>
 
   <!-- Footer -->
-  <text x="450" y="580" text-anchor="middle" fill="#555555" font-size="10">Azure Pay-As-You-Go + Snowflake Business Critical — Terraform Automated</text>
+  <text x="450" y="580" text-anchor="middle" fill="#555555" font-size="10">Azure Pay-As-You-Go + Snowflake - Terraform Automated</text>
 
 </svg>
