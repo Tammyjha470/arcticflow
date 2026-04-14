@@ -57,3 +57,6 @@ crash.log
 *.pem
 *.key
 secrets/
+# Snowflake RSA key pair
+snowflake_private_key.p8
+snowflake_public_key.pub
