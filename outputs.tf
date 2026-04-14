@@ -71,3 +71,8 @@ output "snowflake_reporting_database" {
   description = "Snowflake reporting database name"
   value       = module.snowflake.reporting_database_name
 }
+
+output "log_analytics_workspace_name" {
+  description = "Log Analytics workspace name"
+  value       = module.monitoring.log_analytics_workspace_name
+}

@@ -118,3 +118,20 @@ module "snowflake" {
   environment = var.environment
   tags        = var.tags
 }
+
+module "monitoring" {
+  source = "./modules/monitoring"
+
+  project             = var.project
+  environment         = var.environment
+  location            = var.location
+  resource_group_name = module.networking.resource_group_name
+  storage_account_id  = module.storage.storage_account_id
+  key_vault_id        = module.key_vault.key_vault_id
+  data_factory_id     = module.data_factory.data_factory_id
+  sql_server_id       = module.sql.sql_server_id
+  alert_email         = var.alert_email
+  tags                = var.tags
+
+  depends_on = [module.data_factory, module.storage, module.sql, module.key_vault]
+}
