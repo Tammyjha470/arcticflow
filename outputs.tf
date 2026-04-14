@@ -51,3 +51,23 @@ output "data_factory_principal_id" {
   description = "ADF Managed Identity principal ID"
   value       = module.data_factory.data_factory_principal_id
 }
+
+output "snowflake_warehouse" {
+  description = "Snowflake warehouse name"
+  value       = module.snowflake.warehouse_name
+}
+
+output "snowflake_raw_database" {
+  description = "Snowflake raw database name"
+  value       = module.snowflake.raw_database_name
+}
+
+output "snowflake_analytics_database" {
+  description = "Snowflake analytics database name"
+  value       = module.snowflake.analytics_database_name
+}
+
+output "snowflake_reporting_database" {
+  description = "Snowflake reporting database name"
+  value       = module.snowflake.reporting_database_name
+}

@@ -17,8 +17,8 @@ terraform {
       version = "~> 3.100"
     }
     snowflake = {
-      source  = "Snowflake-Labs/snowflake"
-      version = "~> 0.89"
+      source  = "snowflakedb/snowflake"
+      version = "~> 0.100"
     }
   }
 }
@@ -28,10 +28,13 @@ provider "azurerm" {
 }
 
 provider "snowflake" {
-  account                = var.snowflake_account
-  username               = var.snowflake_user
-  private_key_path       = var.snowflake_private_key_path
+  organization_name      = "HAHJJMT"
+  account_name           = "XD80397"
+  user                   = var.snowflake_user
+  authenticator          = "SNOWFLAKE_JWT"
+  private_key            = file(var.snowflake_private_key_path)
   private_key_passphrase = var.snowflake_private_key_passphrase
+  role                   = "SECURITYADMIN"
 }
 
 module "networking" {
@@ -106,4 +109,12 @@ module "data_factory" {
   tags                 = var.tags
 
   depends_on = [module.key_vault, module.storage, module.sql]
+}
+
+module "snowflake" {
+  source = "./modules/snowflake"
+
+  project     = var.project
+  environment = var.environment
+  tags        = var.tags
 }

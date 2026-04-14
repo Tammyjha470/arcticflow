@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(terraform init:*)",
+      "Bash(terraform plan:*)",
+      "Bash(terraform apply:*)",
+      "Bash(find C:/Users/tanma/.claude/projects/C--Users-tanma-arcticflow -name *.txt -newer C:/Users/tanma/arcticflow/main.tf)",
+      "Bash(sort -t/ -k1)",
+      "Bash(terraform force-unlock:*)",
+      "Bash(terraform import:*)",
+      "Bash(MSYS_NO_PATHCONV=1 terraform import module.data_factory.azurerm_role_assignment.adf_storage_contributor /subscriptions/07d0c06e-605c-43db-a538-47f66b7edca6/resourceGroups/rg-arcticflow-dev/providers/Microsoft.Storage/storageAccounts/saarcticflowdev/providers/Microsoft.Authorization/roleAssignments/474e7e47380cb226eacb60cd9400d240)"
+    ]
+  }
+}

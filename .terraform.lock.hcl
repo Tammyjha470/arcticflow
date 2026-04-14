@@ -21,9 +21,9 @@ provider "registry.terraform.io/hashicorp/azurerm" {
   ]
 }
 
-provider "registry.terraform.io/snowflake-labs/snowflake" {
+provider "registry.terraform.io/snowflakedb/snowflake" {
   version     = "0.100.0"
-  constraints = "~> 0.89"
+  constraints = "~> 0.100"
   hashes = [
     "h1:56kgUlBbcOBsoJih1kIuYxU1gUfU9sIM45yMXoz+48w=",
     "zh:00adfc35d4772afaf71aecfe2e6c16a8607084d48e70e9d5fca101184303f807",
